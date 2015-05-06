@@ -1,0 +1,12 @@
+#! /bin/sh -xe
+
+#
+#Usage()
+#
+
+usage()
+{
+	echo "run command as \"$0 filename.dat ....\""
+	exit 2
+}
+

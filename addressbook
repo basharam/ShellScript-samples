@@ -1,0 +1,249 @@
+#. yesno_library
+#. usage_lib
+
+#! /bin/sh 
+###
+# name of this file contactmgr
+##
+
+#fname=contactsmgr.dat
+fname=$1
+tmpfiname=$0.$$
+
+#test ! -f $fname && >$fname
+
+handle_signal_HUP_TERM()
+{
+	echo  terminate 
+	exit 0
+}
+
+handle_signal_INT_QUIT()
+{
+	code=$1
+	if yesno "Do you want to quit" 
+	then
+		echo  received exit code 3
+		exit $code
+	else
+		continue
+	fi
+}
+
+
+usage()
+{
+	echo " ^G Usage: run command as \"$0 filename.dat ....\""
+	
+	#echo "Usage: `basename $script` $*" 1>&2
+	exit 2
+}
+
+pause()
+{
+	echo Enter Integer Value
+	
+	echo -n "Press <Enter> to continue:"
+	read  junkval # discard this values
+	
+}
+
+heading()
+{
+	clear
+	echo "----------------------------------------------\n"
+	echo "Frist Name    Surname  Address    city    zip  \n"
+	echo "----------------------------------------------\n"
+	
+	
+}
+createContact()
+{
+	echo "::::Enter contact detals:::: \c"
+	echo
+	echo " First name: \c"
+	read aname
+	echo " Surname   : \c"
+	read asname
+	echo " Address   : \c"
+	read add
+	echo " City      : \c"
+	read acity
+	echo " ZIP       : \c"
+	read azip
+	echo
+	echo " ================================"
+	echo " Confirm  given  details "
+	echo " ================================"
+	echo " First name:$aname"
+	echo " Surname   :$asname"
+	echo " Address   :$add"
+	echo " City      :$acity" 
+	echo " ZIP       :$azip"
+	echo
+	
+	if yesno "Save the details"
+	then
+	echo $aname:$asname:$add:$acity:$azip>>$fname
+	else
+		continue
+	fi
+	
+}
+
+viewContacts()
+{
+	echo View contacts
+	echo 
+	echo "You current contact manager has\n"
+	echo `cat $fname`
+	heading
+	#echo `cat $fname` | awk -F : '{printf("%-14.14s%-9.9s%-9.9s%-6.6s%-4.4s\n",$1,$2,$3,$4,$5)}'
+	sort -t : -k +1 $fname | awk -F : '{printf("%-14.14s%-9.9s%-11.9s%-9.6s%-4.4s\n",$1,$2,$3,$4,$5)}' |more
+	echo 
+	total=`cat $fname |wc -l`
+	echo "Total $total  contact(s) "
+	echo -e "\nThank you for using contact manager "
+	
+	if test ! "$total" -eq 0
+	then 
+		while :
+		do
+			if yesno "View again"
+			then
+				viewContacts
+			else
+				break
+			fi
+			
+		done
+	fi
+}
+
+findcontact()
+{
+	
+	echo -n "Enter Name or address or state or zip :"
+	read findstring 
+	
+	if  grep "$findstring" $fname >/dev/null
+	then
+	(	heading
+		grep -i "$findstring" $fname |  awk -F : '{printf("%-14.14s%-9.9s%-11.9s%-9.6s%-4.4s\n",$1,$2,$3,$4,$5)}'
+		
+	)|more
+	return 0 # success or true
+	else
+	echo Not found
+	return 1 # false
+	fi
+	
+}
+
+deletecontact()
+{
+	findcontact && yesno "Delete these contacts ?" || return
+		
+	if test -z $findstring
+	then
+	echo;echo "You typed Empty string"
+	else
+	echo "$tmpfiname"
+	sed "/$findstring/d" $fname >> $tmpfiname
+        mv $tmpfiname $fname	
+	fi
+}
+
+quitcontactmgr()
+{
+	echo "Quit"; exit 0
+}
+
+yesno()
+{
+	while :
+	do
+	echo -n "$* (Y/N):"
+	read yn junk
+	case $yn in 
+		y|Y|yes|YES|s|S)
+		return 0
+		;;
+		n|N|no|NO)
+		return 1
+		;;
+		*)
+		echo Enter correct value
+		;;
+	esac
+	done
+
+}
+
+startMenu()
+{
+	while true
+	do
+	echo;echo
+	
+	echo "****************************************"
+	echo "Contacts manager"
+	echo
+	echo "Contacts Menu \n"
+	echo -e "\t 1. Create a New contact." 
+	echo -e "\t 2. View  contacts. "
+	echo -e "\t 3. Search a contact. "
+	echo -e "\t 4. Delete a Contact from Database. "
+	echo "*******************************************"
+	echo -n "Select Menu Option [x] or 'q' to Quit: "
+	
+	read mMenuItem junk
+
+	test -n "$junk" && (echo type a single character without space; continue)
+
+	if test -z "$mMenuItem"
+	then
+		echo Enter valid Menu option $mMenuItem
+		continue
+	else
+		case "$mMenuItem" in 
+						1)	createContact ;;
+						2)	viewContacts ;;
+						3)	findcontact ;;
+						4)	deletecontact ;;
+						
+						[qQ]uit| q*|Q*)
+						quitcontactmgr ;;
+						
+						*)	
+						pause 
+						continue;;
+		esac
+	fi
+
+	done
+}
+##
+# Main code start 
+##
+trap handle_signal_HUP_TERM 1  15
+trap "handle_signal_INT_QUIT 3" 2 3
+
+
+if test -z "$fname" 
+then
+	usage
+elif test -e  "$fname" -a ! -w "$fname"
+then
+	echo "write permission denied"
+	exit
+elif test ! -e "$fname" 
+then
+	yesno "$fname does not exist, create one?" && >$fname|| exit
+else
+:
+fi
+
+
+
+startMenu

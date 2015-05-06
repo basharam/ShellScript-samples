@@ -1,0 +1,143 @@
+2~
+abc
+adb
+addressbook
+at-job.list
+atjob_out.txt
+avg
+beeper
+bg_hand_enter.sh
+bla1.tar.gz
+bla1.txt
+bla.gz
+callercmd.sh
+cdto_bla.sh
+contactdb.dat
+contacts
+convertUTF8_to_UTF16.sh
+copydir.sh
+data-file
+data_file1
+date.sh
+dirtest.sh
+dji.html
+dosfiletype.txt
+dosfiletype.txt.unix
+dostoUnixFileconverion.sh
+erase.sh
+errFormat.sh
+exec_shell.sh
+exercising-dd.sh
+filetest
+getopt_ex.sh
+getoptS.sh
+grepsrc
+greptest
+hosts
+int_or_str.sh
+joinfile1.txt
+joinfile2.txt
+keypress.sh
+ktmp
+listusr.txt
+logfile
+logfile.sh
+log.txt
+quotes.sh
+read_multivar_REPLY.sh
+read_novar.sh
+readtest.sh
+rotate.sh
+secret-pw.sh
+set_test.sh
+shopt.sh
+sigtest
+spamReport.sh
+splitcopy.sh
+splitcopy.sh.copy
+temp.dat
+testAlt.sh
+testdb.dat
+test.sh
+testsort.txt
+testsuid.sh
+testyn
+t_file.txt
+todir.sh
+usage_lib
+weirdvars.sh
+wget_stock.sh
+whiletest.sh
+yesno_library
+total 352
+-rw-rw-r-- 1 br br     0 Jul 10 12:51 2~
+drwxrwxr-x 2 br br  4096 Dec  3 17:52 abc
+-rwxrwxr-- 1 br br   601 Jul  3 12:28 adb
+-rwxrwxr-x 1 br br  3991 Jul  9 15:59 addressbook
+-rwxrwxr-x 1 br br    21 Dec  3 09:54 at-job.list
+-rw-rw-r-- 1 br br   818 Dec 10 15:55 atjob_out.txt
+-rwxrwxr-x 1 br br   372 Jul  8 09:58 avg
+-rwxrwxr-x 1 br br   186 Jul 10 12:50 beeper
+-rwxrwxr-x 1 br br   700 Dec  2 10:19 bg_hand_enter.sh
+-rw-rw-r-- 1 br br   111 Dec  3 17:11 bla1.tar.gz
+-rw-rw-r-- 1 br br     0 Dec  3 17:09 bla1.txt
+-rw-rw-r-- 1 br br    29 Dec  3 17:13 bla.gz
+-rwxrwxr-x 1 br br   610 Dec  2 10:54 callercmd.sh
+-rwxrwxr-x 1 br br   828 Nov 27 16:46 cdto_bla.sh
+-rw-rw-r-- 1 br br   132 Jul  9 15:58 contactdb.dat
+-rwxrwxr-x 1 br br 12116 Jul  9 16:02 contacts
+-rw-rw-r-- 1 br br   360 Dec  3 16:17 convertUTF8_to_UTF16.sh
+-rwxrwxr-x 1 br br   798 Dec  2 11:59 copydir.sh
+-rw-rw-r-- 1 br br    64 Nov 26 16:16 data-file
+-rw-rw-r-- 1 br br     5 Nov 26 16:38 data_file1
+-rwxrwxr-x 1 br br   121 Nov 10 15:42 date.sh
+-rwxrwxr-x 1 br br   331 Jul  2 15:20 dirtest.sh
+-rw-rw-r-- 1 br br 78540 Dec  4 10:50 dji.html
+-rw-rw-r-- 1 br br    17 Dec  3 15:34 dosfiletype.txt
+-rw-rw-r-- 1 br br    14 Dec  3 15:40 dosfiletype.txt.unix
+-rwxrwxr-x 1 br br   279 Dec  3 15:40 dostoUnixFileconverion.sh
+-rwxrwxr-x 1 br br   522 Dec  8 14:12 erase.sh
+-rwxrwxr-x 1 br br   207 Nov 26 14:20 errFormat.sh
+-rwxrwxr-x 1 br br   785 Dec  2 09:53 exec_shell.sh
+-rwxrwxr-x 1 br br  1368 Dec  8 12:08 exercising-dd.sh
+-rwxrwxr-x 1 br br   156 Jul  2 13:46 filetest
+-rwxrwxr-x 1 br br   839 Dec  4 15:07 getopt_ex.sh
+-rwxrwxr-x 1 br br   623 Oct 31 17:31 getoptS.sh
+-rwxrwxr-x 1 br br   602 Jul 16 10:37 grepsrc
+-rwxrwxr-x 1 br br   739 Jul 16 10:22 greptest
+-rw-rw-r-- 1 br br   142 Jul  7 11:53 hosts
+-rwxrwxr-x 1 br br   464 Nov 20 14:32 int_or_str.sh
+-rw-rw-r-- 1 br br    22 Dec  3 10:32 joinfile1.txt
+-rw-rw-r-- 1 br br    22 Dec  3 10:33 joinfile2.txt
+-rwxrwxr-x 1 br br   406 Dec  8 12:18 keypress.sh
+drwxrwxr-x 2 br br  4096 Dec  2 11:52 ktmp
+-rw-rw-r-- 1 br br   177 Jul  2 13:46 listusr.txt
+-rw-rw-r-- 1 br br  1337 Dec  2 11:56 logfile
+-rwxrwxr-x 1 br br   737 Dec  2 11:55 logfile.sh
+-rw-rw-r-- 1 br br    10 Dec  8 12:06 log.txt
+-rwxrwxr-x 1 br br   250 Nov 20 14:09 quotes.sh
+-rwxrwxr-x 1 br br   905 Nov 26 16:24 read_multivar_REPLY.sh
+-rwxrwxr-x 1 br br   487 Nov 20 15:50 read_novar.sh
+-rwxrwxr-x 1 br br    55 Nov 19 17:22 readtest.sh
+-rwxrwxr-x 1 br br   386 Jul 10 12:55 rotate.sh
+-rwxrwxr-x 1 br br   520 Dec  8 13:45 secret-pw.sh
+-rwxrwxr-x 1 br br   757 Nov 27 11:32 set_test.sh
+-rwxrwxr-x 1 br br   309 Nov 13 13:35 shopt.sh
+-rwxrwxr-x 1 br br   175 Jul  9 14:07 sigtest
+-rwxrwxr-x 1 br br  2138 Dec  4 10:48 spamReport.sh
+-rwxrwxr-x 1 br br   517 Dec  4 09:53 splitcopy.sh
+-rw-rw-r-- 1 br br   494 Dec  4 09:35 splitcopy.sh.copy
+-rw-rw-r-- 1 br br     0 Jul  8 15:22 temp.dat
+-rwxrwxr-x 1 br br   356 Jul  2 14:41 testAlt.sh
+-rw-rw-r-- 1 br br    26 Jul  9 16:03 testdb.dat
+-rwxrwxr-x 1 br br   194 Sep  2 17:49 test.sh
+-rw-rw-r-- 1 br br   240 Jul  7 11:49 testsort.txt
+-rwsr--r-- 1 br br    87 Nov 19 14:42 testsuid.sh
+-rwxrwxr-x 1 br br   124 Jul  8 10:17 testyn
+-rw-rw-r-- 1 br br     0 Jul  2 15:51 t_file.txt
+-rwxrwxr-x 1 br br    73 Nov 27 17:01 todir.sh
+-rwxrwxr-x 1 br br    99 Jul  9 14:20 usage_lib
+-rwxrwxr-x 1 br br  1107 Nov 20 14:22 weirdvars.sh
+-rwxrwxr-x 1 br br   969 Dec  4 10:51 wget_stock.sh
+-rwxrwxr-x 1 br br    88 Jul  2 16:20 whiletest.sh
+-rwxrwxr-x 1 br br   200 Jul  7 18:06 yesno_library

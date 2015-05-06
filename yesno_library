@@ -1,0 +1,22 @@
+#! /bin/sh
+
+yesno()
+{
+	while :
+	do
+	echo -n "$* (Y/N):"
+	read yn junk
+	case $yn in 
+		y|Y|yes|YES|s|S)
+		return 0
+		;;
+		n|N|no|NO)
+		return 1
+		;;
+		*)
+		echo Enter correct value
+		;;
+	esac
+	done
+
+}

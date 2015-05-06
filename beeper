@@ -1,0 +1,13 @@
+usage()
+{
+    script=$1
+    shift
+	echo `beep`		
+    echo " Usage: `basename $script` $*" 2>&1
+    exit 2
+}
+
+#
+#   A simple test for the above function
+#
+usage $0 filename username ...

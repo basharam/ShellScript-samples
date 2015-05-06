@@ -1,0 +1,24 @@
+#! /bin/sh
+
+#
+#  sigtest
+# usgage: ./sigtest &
+# kill -10 pid
+#
+runcmd()
+{
+echo
+echo "$*"
+date
+cal
+echo ; echo;
+
+
+}
+
+trap "runcmd I\'m immortal " 10
+
+while :
+do
+	sleep 1
+done

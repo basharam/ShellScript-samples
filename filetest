@@ -1,0 +1,13 @@
+#! /bin/sh
+
+file=listusr.txt
+
+if ls $file > /dev/null 2>&1
+then 
+echo $file already exists
+elif who>$file
+then
+echo $file created with all users
+else 
+:
+fi

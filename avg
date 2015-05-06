@@ -1,0 +1,30 @@
+#! /bin/sh
+echo "This program will print Avg of all int values "
+echo "Enter Integer values "
+
+Average()
+{
+	total=0	
+	count=0
+	echo "$#"
+	echo "$*"
+	
+	if [ $# = 0 ]
+	then
+	echo "Enter valid data"
+	exit 0
+	fi
+
+	for eachval # 
+	do
+		total=`expr $total + $eachval`
+	done
+	
+	avg=`expr $total / $#`
+		
+	echo "The Avegrage values of \"$*\" is:  $avg"
+}
+
+Average 12 12
+Average 
+

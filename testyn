@@ -1,0 +1,13 @@
+. yesno_library
+
+#
+#Testing yesno() of yesno_lib library
+#
+while true
+do
+	if yesno Enter yes or no 
+	then
+		exit
+	fi
+	
+done
